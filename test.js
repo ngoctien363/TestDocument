@@ -22,16 +22,16 @@ có chia hết cho 3 hay không
 function findCount(number) {
     let sum = 0; // biến tổng
     for (let i = 0; i < number.length; ++i) {
-      sum += number[i];
+      sum += number[i] - 48;
     }
     let count = 0;
     if(sum % 3 === 0) count++;
     for( let j = 0; j < number.length; ++j){
-      let reSum = sum - (number[j]);
+      let reSum = sum - (number[j] - 48 );
       
       for(let t = 0; t < 9; ++t ){
         //Kiểm tra reSum có chia hết cho 3 không
-        if((reSum + t)%3 == 0 && t != number[t]){
+        if((reSum + t)%3 == 0 && t != number[t] - 48){
           ++count;
         }
       }
